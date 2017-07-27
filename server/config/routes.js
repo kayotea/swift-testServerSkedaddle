@@ -14,7 +14,7 @@ module.exports = function(app){
     app.post('/new/person', (req, res) => {
         people.createItem(req, res);
     });
-    app.get('/find/person', (req, res) => {
+    app.post('/find/person', (req, res) => {
         people.findItem(req, res);
     });
     app.get('/persons', (req, res) => {
@@ -34,8 +34,8 @@ module.exports = function(app){
     app.get('/events', (req, res) => {
         meets.readItems(req, res);
     });
-    app.get('/find/event', (req, res) => {
-        people.findItem(req, res);
+    app.post('/find/event', (req, res) => {
+        meets.findItem(req, res);
     });
     app.post('/delete/event', (req, res) => {
         meets.deleteItem(req, res);
